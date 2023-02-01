@@ -11,5 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "mongoose": "^6.9.0"
+  },
+  "engines": {
+    "node": ">=19.4.0",
+    "npm": ">=9.3.1"
   }
 }
