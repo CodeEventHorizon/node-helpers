@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "private_key": "openssl genrsa -out private_key.pem 2048",
+    "public_key": "openssl rsa -in private_key.pem -pubout -out public_key.pem",
     "dev": "ts-node-dev --respawn -r tsconfig-paths/register src/app.ts"
   },
   "keywords": [],
