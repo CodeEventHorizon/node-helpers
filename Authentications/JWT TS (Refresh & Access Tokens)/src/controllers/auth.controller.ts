@@ -16,7 +16,6 @@ export const excludedFields = ['password'];
 
 // Logout
 const logout = (res: Response) => {
-  console.log('first');
   res.cookie('access_token', '', { maxAge: 1 });
   res.cookie('refresh_token', '', { maxAge: 1 });
   res.cookie('logged_in', '', {
