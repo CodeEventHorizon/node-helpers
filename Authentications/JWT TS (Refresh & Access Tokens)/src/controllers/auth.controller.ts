@@ -16,6 +16,7 @@ export const excludedFields = ['password'];
 
 // Logout
 const logout = (res: Response) => {
+  console.log('first');
   res.cookie('access_token', '', { maxAge: 1 });
   res.cookie('refresh_token', '', { maxAge: 1 });
   res.cookie('logged_in', '', {
@@ -177,7 +178,7 @@ export const logoutHandler = async (
 ) => {
   try {
     const user = res.locals.user;
-    await redisClient.del(user._id);
+    await redisClient.del(user._id.toString());
     logout(res);
     return res.status(200).json({ status: 'success' });
   } catch (error: any) {
